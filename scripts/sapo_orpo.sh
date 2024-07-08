@@ -1,6 +1,6 @@
 #!/bin/bash
-# bash scripts/sapo_orpo.sh orpo 4 256 0.05 capybara 1 1 2000 mistral
-# bash scripts/sapo_orpo.sh orpo 4 256 0.05 capybara 1 1 2000 llama
+# bash scripts/sapo_orpo.sh orpo 4 256 0.5 capybara 1 1 2000 mistral
+# bash scripts/sapo_orpo.sh orpo 4 256 0.5 capybara 1 1 2000 llama
 
 export PATH="/home/aiscuser/.local/bin:$PATH"
 
