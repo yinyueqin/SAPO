@@ -46,4 +46,4 @@ If you find this work useful for your research, please consider citing our paper
 ```
 
 ## Acknowledgement
-This repo is built upon [SPIN](https://github.com/uclaml/SPIN/tree/main/spin) and [TRL](https://github.com/huggingface/trl). We thank the authors for their excellent work.
+This repo is built upon [SPIN](https://github.com/uclaml/SPIN/tree/main) and [TRL](https://github.com/huggingface/trl). We thank the authors for their excellent work.
