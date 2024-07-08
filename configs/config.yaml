@@ -1,0 +1,48 @@
+# Model arguments
+model_name_or_path: wandb/mistral-7b-zephyr-sft
+use_flash_attention_2: false
+
+# Data training arguments
+dataset_mixer: argilla/distilabel-capybara-dpo-7k-binarized
+dataset_splits:
+- train
+
+preprocessing_num_workers: 12
+
+# Trainer arguments
+bf16: true
+beta: 0.1
+do_eval: false
+evaluation_strategy: "no"
+eval_steps: 100
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+hub_model_id: mistral-7b-dpo-sapo
+hub_private_repo: True
+learning_rate: 5.0e-7
+log_level: info
+logging_steps: 50
+lr_scheduler_type: linear
+max_length: 2048
+max_prompt_length: 1792
+token_generate_length: 256
+num_train_epochs: 4
+optim: rmsprop
+output_dir: outputs
+per_device_train_batch_size: 8
+per_device_eval_batch_size: 4
+push_to_hub: true
+report_to:
+- wandb
+save_strategy: "steps"
+save_steps: 300
+save_total_limit: null
+seed: 42
+warmup_ratio: 0.1
+
+loss_mode: dpo
+max_replay_buffer_size: 2000
+sample_every_n_steps: 1
+responses_per_prompt: 1
+ref_update_mode: ema
+ema_beta: 0.5

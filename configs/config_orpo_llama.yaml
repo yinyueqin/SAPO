@@ -1,0 +1,43 @@
+# Model arguments
+model_name_or_path: meta-llama/Meta-Llama-3-8B
+model_revision: main
+torch_dtype: bfloat16
+use_flash_attention_2: true
+
+# Data training arguments
+chat_template: "{% for message in messages %}{{'<|im_start|>' + message['role'] + '\n' + message['content'] + '<|im_end|>' + '\n'}}{% endfor %}{% if add_generation_prompt %}{{ '<|im_start|>assistant\n' }}{% endif %}"
+dataset_mixer: argilla/distilabel-capybara-dpo-7k-binarized
+dataset_splits:
+- train
+
+preprocessing_num_workers: 8
+
+# ORPOTrainer arguments
+bf16: true
+beta: 0.05
+gradient_accumulation_steps: 1
+gradient_checkpointing: true
+hub_model_id: llama-8b-orpo-sapo
+hub_private_repo: True
+learning_rate: 5.0e-6
+log_level: info
+logging_steps: 10
+lr_scheduler_type: inverse_sqrt
+max_length: 2048
+max_prompt_length: 1792
+token_generate_length: 256
+num_train_epochs: 4
+optim: adamw_bnb_8bit
+output_dir: outputs
+per_device_train_batch_size: 8
+push_to_hub: true
+report_to:
+- wandb
+save_strategy: "steps"
+save_steps: 300
+seed: 42
+warmup_steps: 100
+max_replay_buffer_size: 2000
+sample_every_n_steps: 1
+responses_per_prompt: 1
+ema_beta: 0.5
