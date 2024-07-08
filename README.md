@@ -29,3 +29,21 @@ A suitable [Anaconda](https://docs.anaconda.com/anaconda/install/) environment n
 ## Training
 
 For detailed script commands, please refer to the scripts in `scripts/sapo_dpo.sh` and `scripts/sapo_orpo.sh`.
+
+
+
+## Citation
+
+If you find this work useful for your research, please consider citing our paper:
+
+```bibtex
+@article{yin2024self,
+  title={Self-Augmented Preference Optimization: Off-Policy Paradigms for Language Model Alignment},
+  author={Yin, Yueqin and Wang, Zhendong and Xie, Yujia and Chen, Weizhu and Zhou, Mingyuan},
+  journal={arXiv preprint arXiv:2405.20830},
+  year={2024}
+}
+```
+
+## Acknowledgement
+This repo is built upon [SPIN](https://github.com/uclaml/SPIN/tree/main/spin) and [TRL](https://github.com/huggingface/trl). We thank the authors for their excellent work.
